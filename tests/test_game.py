@@ -2,6 +2,7 @@ import pytest
 from tictactoe.game import TicTacToe
 
 
+
 def test_initial_state():
     game = TicTacToe()
     # Joueur X commence
@@ -23,6 +24,14 @@ def test_valid_move_places_symbol_and_switches_player():
     # Après un coup valide, on change de joueur
     assert game.current_player == "O"
 
+    def test_player_alternates_correctly():
+        game = TicTacToe()
+
+        game.play_move(0, 0)  # X plays
+        assert game.current_player == "O"
+        
+        game.play_move(1, 0)  # O plays
+        assert game.current_player == "X"
 
 def test_cannot_play_out_of_bounds():
     game = TicTacToe()
