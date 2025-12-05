@@ -1,5 +1,12 @@
 import pytest
+import os
+import sys
+
+# Ajouter le dossier parent au PYTHONPATH
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+
 from tictactoe.game import TicTacToe
+
 
 
 
